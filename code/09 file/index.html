@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文件读取</title>
+</head>
+<body>
+	<input type="file" class="file" multiple>
+	<img src="" alt="" id="img">
+	<script>
+        /*文件对象*/
+		var file = document.querySelector('.file');
+
+        /*文件选择的一个事件*/
+		file.onchange = function () {
+
+			console.log(this.files);
+
+			var reader = new FileReader();
+
+
+			reader.readAsDataURL(this.files[0]);
+
+			reader.onload = function (ev) {
+                console.log(this.result);
+				document.querySelector('#img').src = this.result;
+
+			}
+		}
+	</script>
+</body>
+</html>

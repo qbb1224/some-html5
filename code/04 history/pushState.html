@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pushState</title>
+</head>
+<body>
+	<input type="button" id="btn" value="看地址变没变">
+	<script>
+		// 1、pushState可以往历史记录添加一条记录
+		var btn = document.getElementById('btn');
+		
+		// 可以添加新记录
+		btn.onclick = function () {
+			// 第3个参数表示新追加的历史记录
+			// 第2代表示网页的title，所有浏览器基本都忽略
+			// 第一个参数，代表我们自定义一些数据，可传可不传，不传给null
+			history.pushState(null, 'text', '/test.html');
+		}		
+	</script>
+</body>
+</html>

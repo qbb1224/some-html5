@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>onpopstate</title>
+</head>
+<body>
+	<input type="button" id="btn" value="看地址变没变">
+	<script>
+		var btn = document.getElementById('btn');
+
+		btn.onclick = function () {
+			// 新增一条记录
+			// 我们自定义的数据，只对新增的相对应的历史起作用
+			history.pushState({key: 'itcast'}, '标题变没变', '/test.html');
+		}
+
+		// 监听历史的变化？只有在点后退/前进时调用
+		window.onpopstate = function (state) {
+			console.log(location.hash);
+			// console.log();
+		}
+
+		/*hash  hashchange */
+		
+	</script>
+</body>
+</html>

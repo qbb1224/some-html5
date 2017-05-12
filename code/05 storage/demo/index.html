@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>storage</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .download{
+            height: 100px;
+            line-height: 100px;
+            font-size: 50px;
+            width: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            text-align: center;
+            color: #fff;
+        }
+        .download a{
+            font-size: 12px;
+            float: right;
+            margin-right: 20px;
+        }
+        .container{
+            width: 980px;
+            height: 1000px;
+            background: greenyellow;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="download">下载app <a href="javascript:;">隐藏</a></div>
+    <div class="container">
+        网页内容
+    </div>
+    <script src="../jquery.min.js"></script>
+    <script>
+        if(localStorage.getItem('abc') != 'hide'){
+            $('.download').slideDown(500).on('click','a',function(){
+                $(this).parent().slideUp();
+                localStorage.setItem('abc','hide');
+            });
+        }
+    </script>
+</body>
+</html>
